@@ -1,6 +1,6 @@
 export interface Cat {
     id: number;
-    imageUrl: string;
+    url: string;
 }
 
 export type Cats = Cat[]
