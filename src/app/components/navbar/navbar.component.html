@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<mat-toolbar class="toolbar" color="primary">
+    <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <h1>Cute cat match</h1>
+  <mat-icon>logo_dev</mat-icon>
+
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToUrl('')">
+        <mat-icon>sports_mma</mat-icon>
+        <span>match</span>
+    </button>
+    <button mat-menu-item (click)="goToUrl('cats')">
+        <mat-icon>list_alt</mat-icon>
+        <span>cats</span>
+    </button>
+    <button mat-menu-item (click)="goToUrl('match')">
+        <mat-icon>sports_mma</mat-icon>
+        <span>match</span>
+    </button>
+</mat-menu>

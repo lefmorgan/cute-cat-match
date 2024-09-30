@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-rank-cat',
   standalone: true,
   imports: [],
-  templateUrl: './rank-cat.component.html',
-  styleUrl: './rank-cat.component.scss'
+  templateUrl: './rank-cats.component.html',
+  styleUrl: './rank-cats.component.scss'
 })
-export class RankCatComponent {
+export class RankCatsComponent {
 
 }

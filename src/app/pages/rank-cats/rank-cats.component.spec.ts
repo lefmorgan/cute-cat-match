@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RankCatComponent } from './rank-cat.component';
+import { RankCatsComponent } from './rank-cats.component';
 
-describe('RankCatComponent', () => {
-  let component: RankCatComponent;
-  let fixture: ComponentFixture<RankCatComponent>;
+describe('RankCatsComponent', () => {
+  let component: RankCatsComponent;
+  let fixture: ComponentFixture<RankCatsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RankCatComponent]
+      imports: [RankCatsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RankCatComponent);
+    fixture = TestBed.createComponent(RankCatsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

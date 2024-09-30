@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { MatchCatsComponent } from './pages/match-cats/match-cats.component';
 
 export const routes: Routes = [
   {
@@ -9,9 +10,9 @@ export const routes: Routes = [
   },
   {
     path: 'rank',
-    loadChildren: () =>
-      import('./pages/rank-cat/rank-cat.component').then(
-        (m) => m.RankCatComponent
+    loadComponent: () =>
+      import('./pages/rank-cats/rank-cats.component').then(
+        (m) => m.RankCatsComponent
       ),
   },
   {
@@ -28,5 +29,6 @@ export const routes: Routes = [
         (m) => m.MatchCatsComponent
       ),
   },
+  { path: 'crisis', component: MatchCatsComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
