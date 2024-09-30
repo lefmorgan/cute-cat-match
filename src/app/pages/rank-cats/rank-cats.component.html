@@ -1,1 +1,11 @@
 <p>rank-cat works!</p>
+
+@if (cats$$(); as catList) {
+    @for (cat of catList; track cat.id) {
+    <div>
+        <img [src]="cat.url" [alt]="'Cat ' + cat.id" class="cat-image" />
+    </div>
+    }
+} @else {
+    <p>No cats found.</p>
+}
