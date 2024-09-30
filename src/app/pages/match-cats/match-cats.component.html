@@ -1,1 +1,15 @@
-<p>match-cats works!</p>
+@if (!isBattleOver) {
+    <h2>Choisissez votre chat préféré</h2>
+    @if (!isBattleOver) {
+        <div class="cat-battle">
+            @for (cat of currentMatch; track cat.id) {
+                <img [src]="cat.url" (click)="voteFor(cat)" class="cat-image" />
+                <p>Chat ID: {{ cat.id }}</p>
+            }
+        </div>
+    }
+    <button (click)="stopBattles()">Arrêter les combats</button>
+} @else {
+    <h2>Les combats sont arrêtés.</h2>
+    <button (click)="resumeBattles()">Reprendre les combats</button>
+}

@@ -1,11 +1,6 @@
-<p>rank-cat works!</p>
+<h2>Classement des chats</h2>
 
-@if (cats$$(); as catList) {
-    @for (cat of catList; track cat.id) {
-    <div>
-        <img [src]="cat.url" [alt]="'Cat ' + cat.id" class="cat-image" />
-    </div>
-    }
-} @else {
-    <p>No cats found.</p>
+@for (cat of rankedCatsSignal(); track cat.id) {
+    <p>{{ cat.id }} - Votes : {{ cat.vote }}</p>
+    <img [src]="cat.url" class="cat-image" />
 }

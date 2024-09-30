@@ -1,0 +1,18 @@
+.cat-battle {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .cat-image {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
+  }
+  
+  .cat-image:hover {
+    transform: scale(1.1);
+    border: 2px solid #3498db;
+  }

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { CatsService } from '../../services/cats.service';
 import { Cats } from '../../models/cat.interfaces';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -12,7 +12,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class RankCatsComponent {
   private readonly catsService = inject(CatsService);
-  cats: Cats = []
-  cat$ = this.catsService.getAllCats()
-  cats$$ = toSignal(this.cat$)
+  cats$ = this.catsService.getAllCats()
+  cats$$ = toSignal(this.cats$, { initialValue: [] })
+
+  rankedCatsSignal = computed(() => {
+    const cats = this.cats$$();
+    return cats.slice().sort((a, b) => b.vote - a.vote);
+  });
+
 }

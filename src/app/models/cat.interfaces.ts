@@ -1,6 +1,7 @@
 export interface Cat {
-    id: number;
+    id: string;
     url: string;
+    vote: number;
 }
 
 export type Cats = Cat[]
