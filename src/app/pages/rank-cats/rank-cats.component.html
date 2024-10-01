@@ -1,6 +1,41 @@
 <h2>Classement des chats</h2>
 
-@for (cat of rankedCatsSignal(); track cat.id) {
-    <p>{{ cat.id }} - Votes : {{ cat.vote }}</p>
-    <img [src]="cat.url" class="cat-image" />
-}
+<div class="podium">
+  <div class="podium-1">
+    <p>{{ rankedCats$$()[0].id }}</p>
+    <img
+      [src]="rankedCats$$()[0].url"
+      class="cat-image"
+      alt="First place cat"
+    />
+    <p>Votes : {{ rankedCats$$()[0].vote }}</p>
+  </div>
+
+  <div class="podium-2">
+    <p>{{ rankedCats$$()[1].id }}</p>
+    <img
+      [src]="rankedCats$$()[1].url"
+      class="cat-image"
+      alt="Second place cat"
+    />
+    <p>Votes : {{ rankedCats$$()[1].vote }}</p>
+  </div>
+
+  <div class="podium-3">
+    <p>{{ rankedCats$$()[2].id }}</p>
+    <img
+      [src]="rankedCats$$()[2].url"
+      class="cat-image"
+      alt="Third place cat"
+    />
+    <p>Votes : {{ rankedCats$$()[2].vote }}</p>
+  </div>
+</div>
+<div class="other-cats">
+  @for (cat of rankedCats$$(); track cat.id) {
+    <div>
+        <p>{{ cat.id }} - Votes : {{ cat.vote }}</p>
+        <img [src]="cat.url" class="cat-image" />
+    </div>
+  }
+</div>

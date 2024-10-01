@@ -15,7 +15,7 @@ export class RankCatsComponent {
   cats$ = this.catsService.getAllCats()
   cats$$ = toSignal(this.cats$, { initialValue: [] })
 
-  rankedCatsSignal = computed(() => {
+  rankedCats$$ = computed(() => {
     const cats = this.cats$$();
     return cats.slice().sort((a, b) => b.vote - a.vote);
   });
