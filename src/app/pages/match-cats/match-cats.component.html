@@ -1,15 +1,23 @@
 @if (!isBattleOver) {
     <h2>Choisissez votre chat préféré</h2>
-    @if (!isBattleOver) {
-        <div class="cat-battle">
-            @for (cat of currentMatch; track cat.id) {
-                <img [src]="cat.url" (click)="voteFor(cat)" class="cat-image" />
-                <p>Chat ID: {{ cat.id }}</p>
-            }
-        </div>
-    }
-    <button (click)="stopBattles()">Arrêter les combats</button>
+
+    <div class="cat-battle">
+
+            <div class="cat-container">
+                <p>Chat ID: {{ currentMatch[0].id }}</p>
+                <img [src]="currentMatch[0].url" (click)="voteFor(currentMatch[0])" class="cat-image" />  
+            </div>
+
+        <img src="../../../assets/vs.png" class="battle-divider" alt="VS" />
+
+        <div class="cat-container">
+            <p>Chat ID: {{ currentMatch[1].id }}</p>
+            <img [src]="currentMatch[1].url" (click)="voteFor(currentMatch[1])" class="cat-image" />
+          </div>
+    </div>
+
+    <button class="battle-btn" (click)="stopBattles()">Arrêter les combats</button>
 } @else {
     <h2>Les combats sont arrêtés.</h2>
-    <button (click)="resumeBattles()">Reprendre les combats</button>
+    <button class="battle-btn" (click)="resumeBattles()">Reprendre les combats</button>
 }

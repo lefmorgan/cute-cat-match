@@ -1,18 +1,45 @@
 .cat-battle {
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-  }
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.cat-container {
+  text-align: center;
+}
   
-  .cat-image {
+.cat-image {
     width: 200px;
     height: auto;
     cursor: pointer;
     border: 2px solid transparent;
     transition: transform 0.3s ease, border 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+      border: 2px solid #3498db;
+    }
+}
+
+.battle-divider {
+  height: 200px;
+  width: auto;
+  margin: 0 20px;
+}
+
+.battle-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
   }
+}
   
-  .cat-image:hover {
-    transform: scale(1.1);
-    border: 2px solid #3498db;
-  }
