@@ -32,8 +32,8 @@ export class MatchCatsComponent {
     return shuffled.slice(0, 2);
   }
 
-  voteFor(cat: Cat) {
-    this.catsService.updateCatRank(cat.id, true);
+  voteFor(cat: Cat, action: 'increment' | 'decrement' | 'reset') {
+    this.catsService.updateCatRank(cat.id, action);
     this.nextMatch();
   }
 

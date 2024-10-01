@@ -5,8 +5,8 @@
 
             <div class="cat-container">
                 <p>{{ currentMatch[0].id }}</p>
-                <p>Vote: {{ currentMatch[1].vote }}</p>
-                <img [src]="currentMatch[0].url" (click)="voteFor(currentMatch[0])" class="cat-image" />  
+                <p>Vote: {{ currentMatch[0].vote }}</p>
+                <img [src]="currentMatch[0].url" (click)="voteFor(currentMatch[0], 'increment')" class="cat-image" />  
             </div>
 
         <img src="../../../assets/vs.png" class="battle-divider" alt="VS" />
@@ -14,7 +14,7 @@
         <div class="cat-container">
             <p>{{ currentMatch[1].id }}</p>
             <p>Vote: {{ currentMatch[1].vote }}</p>
-            <img [src]="currentMatch[1].url" (click)="voteFor(currentMatch[1])" class="cat-image" />
+            <img [src]="currentMatch[1].url" (click)="voteFor(currentMatch[1], 'increment')" class="cat-image" />
           </div>
     </div>
 
