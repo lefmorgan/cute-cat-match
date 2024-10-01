@@ -36,19 +36,36 @@ export class CatsService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(cats));
   }
 
-  updateCatRank(catId: string, increment: boolean) {
+  updateCatRank(catId: string, action: 'increment' | 'decrement' | 'reset') {
     const savedCats = localStorage.getItem(this.localStorageKey);
     if (savedCats) {
       const cats: Cats = JSON.parse(savedCats);
+      const actions = {
+        increment: (vote: number) => vote + 1,
+        decrement: (vote: number) => Math.max(0, vote - 1),
+        reset: () => 0,
+      };
       const updatedCats = cats.map(cat => {
         if (cat.id === catId) {
           return {
             ...cat,
-            vote: cat.vote + (increment ? 1 : 0)
+            vote: actions[action](cat.vote)
           };
         }
         return cat;
       });
+      this.saveCatsToLocalStorage(updatedCats);
+    }
+  }
+
+  resetAllVotes(): void {
+    const savedCats = localStorage.getItem(this.localStorageKey);
+    if (savedCats) {
+      const cats: Cats = JSON.parse(savedCats);
+      const updatedCats = cats.map(cat => ({
+        ...cat,
+        vote: 0
+      }));
       this.saveCatsToLocalStorage(updatedCats);
     }
   }
