@@ -15,12 +15,14 @@
 .podium-1 {
   order: 2;
   background: linear-gradient( 0deg, gold 50%, transparent 50%);
+  background: linear-gradient(to top, #BD4F6C 0%, #9e3b55 50%, transparent 50%);
   padding-bottom: 60px;
 }
 
 .podium-2 {
   order: 1;
   background: linear-gradient(0deg, silver 50%, transparent 50%);
+  background: linear-gradient(to top, #F0CF65 0%, #ebc137 50%, transparent 50%);
   padding-bottom: 30px;
   margin-right: 10px;
 }
@@ -28,13 +30,12 @@
 .podium-3 {
   order: 3;
   background: linear-gradient(0deg,#cd7f32 50%, transparent 50%);
+  background:linear-gradient(to top, #5E9EAD 0%, #49828f 50%, transparent 50%);
   padding-bottom: 15px;
   margin-left: 10px;
 }
 
 .cat-image {
-    width: 200px;
-    height: auto;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

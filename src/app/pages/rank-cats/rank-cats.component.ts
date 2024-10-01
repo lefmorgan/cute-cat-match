@@ -20,4 +20,12 @@ export class RankCatsComponent {
     return cats.slice().sort((a, b) => b.vote - a.vote);
   });
 
+  podiumCats$$ = computed(() => {
+    return this.rankedCats$$().slice(0, 3);
+  });
+
+  remainingCats$$ = computed(() => {
+    return this.rankedCats$$().slice(3);
+  });
+
 }
