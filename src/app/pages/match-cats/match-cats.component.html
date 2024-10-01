@@ -4,14 +4,16 @@
     <div class="cat-battle">
 
             <div class="cat-container">
-                <p>Chat ID: {{ currentMatch[0].id }}</p>
+                <p>{{ currentMatch[0].id }}</p>
+                <p>Vote: {{ currentMatch[1].vote }}</p>
                 <img [src]="currentMatch[0].url" (click)="voteFor(currentMatch[0])" class="cat-image" />  
             </div>
 
         <img src="../../../assets/vs.png" class="battle-divider" alt="VS" />
 
         <div class="cat-container">
-            <p>Chat ID: {{ currentMatch[1].id }}</p>
+            <p>{{ currentMatch[1].id }}</p>
+            <p>Vote: {{ currentMatch[1].vote }}</p>
             <img [src]="currentMatch[1].url" (click)="voteFor(currentMatch[1])" class="cat-image" />
           </div>
     </div>
